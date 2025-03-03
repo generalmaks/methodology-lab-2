@@ -15,7 +15,6 @@ public class LinkedList
         _head = head;
     }
 
-    // Add a new node with the given data to the end of the list
     public void Add(char data)
     {
         Node? newNode = new Node(data);
@@ -36,7 +35,6 @@ public class LinkedList
         }
     }
 
-    // Print the linked list
     public void PrintList()
     {
         Node? current = _head;
@@ -47,6 +45,18 @@ public class LinkedList
         }
 
         Console.WriteLine("null");
+    }
+
+    public int Length()
+    {
+        Node? current = _head;
+        int length = 0;
+        while (current != null)
+        {
+            length++;
+            current = current.Next;
+        }
+        return length;
     }
 }
 
@@ -61,5 +71,6 @@ static class Program
         LList.Add('t');
         LList.Add('s');
         LList.PrintList();
+        Console.WriteLine(LList.Length());
     }
 }
